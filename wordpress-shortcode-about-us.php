@@ -213,7 +213,6 @@ add_shortcode('shortcode-hero-block', 'shortcode_hero_block');
 //   link="https://www.instagram.com/dogsofinstagram/"
 // ]
 
-
 function shortcode_social_media_block($atts = [], $content = null) {
 
     $blockAtts = shortcode_atts(
@@ -225,9 +224,6 @@ function shortcode_social_media_block($atts = [], $content = null) {
     // check the type of social media gives you a dashicon
     $socialMediaTitle = $blockAtts['inner-text'];
     $link = $blockAtts['link'];
-
-    // $link = 'https://twitter.com/chriscoyier';
-    // $socialMediaTitle = '@chriscoyier';
 
     $inlineStyle = 'line-height: inherit; text-decoration: none;';
 
@@ -246,6 +242,7 @@ function shortcode_social_media_block($atts = [], $content = null) {
     }
 
     // ERROR MESSAGE
+    // If there's an error, return the error message.
     if (isset($errorMsg)) {
         return "<p>$errorMsg</p>";
     }
